@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>volcano</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>readme.html</welcome-file>
+  </welcome-file-list>
+  
+  <servlet>
+<!--   Servlet 3.0 does not not require to specify class names but maybe  -->
+<!--   specified if additional configuration information needs to be passed -->
+<!--   to servlets -->
+    <servlet-name>edu.iris.service.rest.Status</servlet-name>
+<!-- 	<servlet-name> Volcano Jersey Web Service </servlet-name> -->
+<!-- 	<servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>	 -->
+<!--     <init-param> -->
+<!--     	<param-name>jersey.config.server.provider.packages</param-name> -->
+<!--     	<param-value>edu.iris.service.rest</param-value> -->
+<!--     </init-param> -->
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>edu.iris.service.rest.Status</servlet-name>
+    <url-pattern>/api/*</url-pattern>
+  </servlet-mapping>
+  
+</web-app>
